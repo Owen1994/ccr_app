@@ -1,4 +1,4 @@
-# currency
+# CCR Project
 
 > currency_app
 
