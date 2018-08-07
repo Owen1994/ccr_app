@@ -1,0 +1,30 @@
+.login {
+    font-size: .55rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
+}
+.password {
+    margin-top: .6rem;
+}
+.forget_password {
+    float: right;
+    padding: .5rem 0;
+}
+button.loginbtn,
+button.registerbtn {
+    width: 100%;
+    color: #fff;
+    padding: .4rem;
+    background-color: rgb(40, 130, 228);
+    border: 1px solid rgb(40, 130, 228);
+    border-radius: .2rem;
+}
+button.loginbtn {
+    margin-top: 1rem;
+}
+button.registerbtn {
+    margin-top: .4rem;
+}

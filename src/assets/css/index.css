@@ -1,0 +1,88 @@
+.home {
+    padding-bottom: 2rem;
+}
+.home .user {
+    background-color: rgb(0, 160, 233);
+    padding: 1rem 0;
+    text-align: center;
+    color: #fff;
+}
+.home .user .stopTime {
+    position: absolute;
+    top: .1rem;
+    right: 2rem;
+    background-color: rgb(42, 130, 228);
+    padding: .05rem .6rem;
+    border: 1px solid rgb(42, 130, 228);
+    border-radius: .5rem;
+}
+.home .user span {
+    font-size: .55rem;
+}
+.home .user ul {
+    position: relative;
+}
+.home .user ul li {
+    float: left;
+}
+.home .user ul li:nth-of-type(1) {
+    width: 15%;
+}
+.home .user ul li:nth-of-type(2) {
+    width: 70%;
+}
+.home .user ul li:nth-of-type(3) {
+    width: 15%;
+    position: absolute;
+    right: 0;
+}
+.home .user_info ul {
+    border-bottom: 2px solid rgb(232, 232, 232);
+}
+.home .user_info ul li {
+    width: 33.33%;
+    float: left;
+    text-align: center;
+    color: rgb(139, 136, 136);
+    padding: .3rem 0;
+}
+.home .user_info ul li p:nth-of-type(2) {
+    padding-top: .3rem;
+    font-size: .6rem;
+}
+.home .notice .title {
+    font-size: .68rem;
+}
+.home .notice .tag_time {
+    font-size: .55rem;
+    padding-top: .3rem;
+    color: rgb(139, 136, 136);
+}
+.home .notice .tag_time::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.home .notice .tag_time>span {
+    float: left;
+    width: 50%;
+}
+.home .notice .tag_time .notice_time {
+    padding-left: 1rem;
+}
+.home .notice ul li {
+    padding: .6rem .6rem;
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+.home .notice .pre_content {
+    font-size: .55rem;
+    padding-top: .3rem;
+    color: rgb(139, 136, 136);
+    overflow:hidden;
+    text-overflow:ellipsis;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    display: -webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2; 
+}

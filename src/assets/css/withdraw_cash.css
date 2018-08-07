@@ -1,0 +1,56 @@
+.withdraw_cash {
+    color: rgb(139, 136, 136);
+    font-size: .6rem;
+    padding: 2rem 0 2rem 0;
+}
+.withdraw_card {
+    padding: .6rem 2rem .6rem 1rem;
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+.withdraw_card>p {
+    float: left;
+}
+.withdraw_card>p:nth-of-type(1) {
+    width: 35%;
+}
+.withdraw_card>p:nth-of-type(2) {
+    width: 65%;
+}
+.withdraw_card .card_select span:nth-of-type(2) {
+    float: right;
+}
+.withdraw_num {
+    padding: .6rem 1rem;
+}
+.num_ipt {
+    position: relative;
+    border-bottom: 1px solid rgb(232, 232, 232);
+    padding: .5rem 0 .2rem 0;
+}
+.num_ipt input {
+    width: 100%;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+}
+.num_ipt::before {
+    content: "￥";
+    position: absolute;
+    left: 0;
+    bottom: .4rem;
+}
+.left_num {
+    padding-top: .4rem;
+}
+.withdraw_btn {
+    padding: .6rem 1rem;
+}
+.withdraw_btn button {
+    width: 100%;
+    text-align: center;
+    background-color: rgb(118, 173, 234);
+    color: #fff;
+    padding: .3rem 0;
+    border: 1px solid rgb(118, 173, 234);
+    border-radius: 5px;
+    margin-top: .4rem;
+}

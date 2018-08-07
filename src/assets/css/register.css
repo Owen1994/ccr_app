@@ -1,0 +1,37 @@
+.register {
+    font-size: .55rem;
+    padding: 1rem 2rem;
+}
+#sms_code {
+    float: left;
+    width: 39%;
+    border: 1px solid rgb(232, 232, 232);
+    font-size: .6rem;
+    padding: .2rem;
+    border-radius: .2rem;
+}
+.get_verificationcode {
+    border: 1px solid rgb(232, 232, 232);
+    font-size: .6rem;
+    float: left;
+    padding: .2rem;
+    width: 35%;
+    margin-left: 1%;
+    border-radius: .2rem;
+    text-align: center;
+}
+.register_confirm,
+.go_login {
+    width: 100%;
+    background-color: rgb(40, 130, 228);
+    border: 1px solid rgb(40, 130, 228);
+    border-radius: .2rem;
+    color: #fff;
+    padding: .4rem;
+}
+.register_confirm {
+    margin-top: 1.2rem;
+}
+.go_login {
+    margin-top: .3rem;
+}

@@ -1,0 +1,239 @@
+/***************************** code reset ****************************/
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { 
+    margin:0; 
+    padding:0;
+} 
+body, button, input, select, textarea { 
+    font:12px/1.5tahoma, arial, \5b8b\4f53; 
+} 
+h1, h2, h3, h4, h5, h6{
+    font-size:100%; 
+} 
+address, cite, dfn, em, var {
+    font-style:normal;
+} 
+code, kbd, pre, samp {
+    font-family:couriernew, courier, monospace;
+} 
+ul, ol {
+    list-style:none;
+} 
+a {
+    text-decoration:none;
+} 
+a:hover {
+    text-decoration:underline;
+} 
+sup {
+    vertical-align:text-top;
+} 
+sub{
+    vertical-align:text-bottom;
+} 
+legend {
+    color:#000;
+} 
+fieldset, img {
+    border:0;
+} 
+button, input, select, textarea {
+    font-size:100%;
+} 
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+button {
+    border: none;
+    background: transparent;
+    outline: none;
+}
+input {
+    border: none;
+    outline: none;
+    width: 100%;
+}
+input[type="radio"] {
+    /* visibility: hidden; */
+    opacity: 0;
+}
+
+/************************* common css ********************************/
+body,html {
+    font-size: .7rem;
+    width: 100%;
+    height: 100%;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+input[readonly] {
+    color: rgb(139, 136, 136);
+}
+* {
+    box-sizing: border-box;
+}
+.red_text {
+    color: red;
+}
+.text_center {
+    text-align: center;
+}
+.input_left {
+    float: left;
+    width: 25%;
+    padding: .15rem 0;
+}
+.input_right {
+    float: left;
+    width: 75%;
+}
+input.input_right,
+.input_right input {
+    border: 1px solid rgb(232, 232, 232);
+    font-size: .6rem;
+    padding: .2rem;
+    border-radius: .2rem;
+}
+.mgt2 {
+    margin-top: .2rem;
+}
+.mgt6 {
+    margin-top: .6rem;
+}
+
+/* 点击刷新面板 */
+.refresh {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    left: 0;
+}
+.refresh button {
+    padding: .5rem 1rem;
+    border: 1px solid rgb(0, 160, 233);
+    border-radius: .5rem;
+    color: rgb(0, 160, 233);
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translateX(-50%);
+}
+
+/* 遮罩面板 */
+.mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 50;
+    display: none;
+}
+.mask img {
+    width: 1.5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+/* 弹框 */
+.popup {
+    display: none;
+    text-align: center;
+    font-size: .6rem;
+    position: fixed;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    background-color: rgba(0, 0, 0, .6);
+    color: #fff;
+    padding: .6rem 1.2rem;
+    left: 50%;
+    top: 8rem;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+/* 头部 */
+.header  {
+    padding: .5rem 0;
+    background-color: rgb(0, 160, 233);
+    color: #fff;
+    font-size: .66rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 95;
+}
+.header ul li {
+    float: left;
+    text-align: center;
+}
+.header ul li:nth-of-type(1) {
+    width: 20%;
+}
+.header ul li:nth-of-type(2) {
+    width: 60%;
+}
+.header ul li:nth-of-type(3) {
+    width: 20%;
+    font-size: .55rem;
+}
+.myheader {
+    padding: .5rem 0;
+    text-align: center;
+    border-bottom: 1px solid rgb(232, 232, 232);
+    position: relative;
+}
+.mybtn {
+    padding: .2rem;
+    background-color: rgb(42, 130, 228);
+    position: absolute;
+    right: 1rem;
+    color: #fff;
+    font-size: .55rem;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    border-radius: .2rem;
+}
+
+/* 页脚 */
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(242,242,242);
+    z-index: 20;
+}
+.footer ul li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding: .5rem 0;
+}
+.footer ul li i {
+    font-size: 1rem;
+}
+.footer ul li i.fa-home {
+    font-size: 1.3rem;
+}

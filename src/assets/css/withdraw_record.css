@@ -1,0 +1,25 @@
+.withdraw_record {
+    color: rgb(139, 136, 136);
+    font-size: .6rem;
+    padding: 2rem 0 2rem 0;
+}
+.withdraw_record_list>li {
+    padding: .6rem;
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+.withdraw_record_list>li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.withdraw_record_list>li>div {
+    float: left;
+    width: 50%;
+}
+.withdraw_record_list>li>div>p:nth-of-type(2) {
+    margin-top: .4rem;
+    font-size: .5rem;
+}
+.withdraw_record_list>li>div:nth-of-type(2) {
+    text-align: center;
+}

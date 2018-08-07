@@ -1,0 +1,17 @@
+.order {
+    color: rgb(139, 136, 136);
+    font-size: .6rem;
+    padding-bottom: 2rem;
+}
+.order_list ul {
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+.order_list ul li {
+    float: left;
+    width: 25%;
+    padding: .5rem .3rem;
+}
+.order_list ul li>p:nth-of-type(2) {
+    padding-top: .3rem;
+    font-size: .5rem;
+}

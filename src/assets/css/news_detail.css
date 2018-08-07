@@ -1,0 +1,22 @@
+.news_detail {
+    color: rgb(139, 136, 136);
+    font-size: .65rem;
+    padding: 2.5rem 0 3rem;
+}
+.detail_title {
+    text-align: center;
+    padding: 0 2rem;
+}
+.news_detail .author_info {
+    padding-top: 1rem;
+}
+.news_detail .author_info,
+.news_detail .addTime_info {
+    font-size: .5rem;
+    padding-top: .4rem;
+    text-align: left;
+}
+.detail_content {
+    font-size: .6rem;
+    padding: 1rem 1.2rem 0;
+}

@@ -1,0 +1,33 @@
+.extention_list {
+    color: rgb(139, 136, 136);
+    font-size: .65rem;
+    padding: 2rem 0 2rem 0;
+}
+.extention_list>ul>li::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.extention_list>ul>li {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    padding: 1rem .6rem;
+    text-align: center;
+}
+.extention_list .extention_info p {
+    float: left;
+    width: 33.33%;
+    font-size: .55rem;
+}
+.extention_list .extention_info p button {
+    background-color: red;
+    border: 1px solid red;
+    border-radius: .4rem;
+    color: #fff;
+    padding: .4rem;
+    margin-top: -1rem;
+}
+.extention_list .time {
+    font-size: .5rem;
+    padding-top: .4rem;
+    text-align: left;
+}

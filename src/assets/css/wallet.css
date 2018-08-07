@@ -1,0 +1,48 @@
+.line_chart {
+    padding-bottom: 2rem;
+}
+.no_data {
+    display: none;
+}
+.chart_list li {
+    float: left;
+    padding: .5rem 1rem;
+    text-align: center;
+    color: rgb(139, 136, 136);
+    font-size: .6rem;
+    position: relative;
+}
+.chart_list li.active::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: rgb(56, 56, 56);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+}
+.chart_list_content .list_title {
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
+.chart_list_content .list_title::after,
+.chart_list_content .list_info>ul::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+.chart_list_content ul.list_title li,
+.chart_list_content .list_info>ul>li {
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: .8rem .4rem;
+    color: rgb(139, 136, 136);
+    font-size: .55rem;
+}
+.chart_list_content .list_info>ul>li {
+    border-bottom: 1px solid rgb(232, 232, 232);
+}
