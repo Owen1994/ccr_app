@@ -73,6 +73,7 @@
         },
         created() {
             this.getNewsDetail();
+            console.log(this.$route)
         },
     }
 </script>

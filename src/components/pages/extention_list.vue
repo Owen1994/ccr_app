@@ -7,16 +7,15 @@
                     <div class="extention_info clearfix">
                         <p>{{ item.Name }}</p>
                         <p>未付费</p>
-                        <p>
-                            <button v-show="item.buyStatus === 1">提醒付费</button>
-                            <span v-show="item.buyStatus === 0" class="red_text">+50</span>
-                        </p>
+                        <div>
+                            <p>{{ item.agentName }}</p>
+                        </div>
                     </div>
                     <p class="time">{{ $formatDate(new Date(item.addTime * 1000)) }}</p>
                 </li>
             </ul>
         </div>
-        <common-component :refreshShow="refreshShow"></common-component>
+        <common-component :refreshShow="refreshShow" :nodataShow="nodataShow"></common-component>
         <common-footer></common-footer>
     </div>
 </template>
@@ -38,7 +37,8 @@
                 //配置数据
                 myTitle: "推广列表",
                 backRouth: "/personal_center",
-                refreshShow: false
+                refreshShow: false,
+                nodataShow: false
             }
         },
         methods: {
@@ -59,7 +59,7 @@
                     }else if(res.code === 100012 || res.code === 100013) {
                         _this.$router.push("/login");
                     }else if(res.code === -1) {
-                        _this.extentionList = [];
+                        _this.nodataShow = true;
                     }else {
                         _this.$popup(res.msg);
                     }

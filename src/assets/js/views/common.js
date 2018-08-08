@@ -1,26 +1,3 @@
-//获取url search对象
-// function getSearch() {
-//     let search = location.search;
-//     let newObj = {};
-//     if(search) {
-//         search = search.split("?")[1];
-//         if(search.indexOf("&")) {
-//             search = search.split("&");
-//             for(var i=0;i<search.length;i++) {
-//                 var key = search[i].split("=")[0];
-//                 var value = search[i].split("=")[1];
-//                 newObj[key] = value;
-//             }
-//         }else {
-//             let key = search[i].split("=")[0];
-//             let value = search[i].split("=")[1];
-//             newObj[key] = value;
-//         }
-//         return newObj;
-//     }else {
-//         return false;
-//     }
-// }
 import Vue from "vue";
 export default {
     install(Vue,options) {
@@ -37,6 +14,15 @@ export default {
                 }
             }
             return newPhoneNum;
+        }
+        //手机号验证
+        Vue.prototype.$phoneValidate = (phoneNum) => {
+            let reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+            if(reg.test(phoneNum)) {
+                return true;
+            }else {
+                return false;
+            }
         }
         //页面弹框
         Vue.prototype.$popup = (word) => {

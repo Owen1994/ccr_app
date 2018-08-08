@@ -164,12 +164,25 @@ input.input_right,
     color: #fff;
     padding: .6rem 1.2rem;
     left: 50%;
-    top: 8rem;
+    top: 50%;
     transform: translate(-50%,-50%);
     -webkit-transform: translate(-50%,-50%);
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
+}
+
+/* 数据空白栏 */
+.no_data {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+}
+.no_data img {
+    width: 100%;
+    height: 100%;
 }
 
 /* 头部 */
@@ -198,10 +211,16 @@ input.input_right,
     font-size: .55rem;
 }
 .myheader {
+    position: fixed;
+    top: 0;
     padding: .5rem 0;
     text-align: center;
     border-bottom: 1px solid rgb(232, 232, 232);
-    position: relative;
+    width: 100%;
+    z-index: 15;
+}
+.myheader + div {
+    padding-top: 2rem;
 }
 .mybtn {
     padding: .2rem;

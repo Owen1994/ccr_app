@@ -44,12 +44,12 @@
                     </div>
                     <div class="gender_select">
                         <div style="position:relative;float:left;">
-                            <i :class="['fa',userInfo.male == 1 ? 'fa-check-circle-o' : 'fa-circle-o']"></i>
+                            <i :class="['fa',userInfo.male == 1 ? 'fa-check-circle-o' : 'fa-circle-o']" style="color: rgb(0, 160, 233);"></i>
                             <input type="radio" name="male" class="male" value="1" @click="selectGender('1')" :checked="userInfo.male == 1">
                             <span>男</span>
                         </div>
                         <div style="position:relative;float:left;margin-left: .5rem;">
-                            <i :class="['fa',userInfo.male == 2 ? 'fa-check-circle-o' : 'fa-circle-o']"></i>
+                            <i :class="['fa',userInfo.male == 2 ? 'fa-check-circle-o' : 'fa-circle-o']" style="color: rgb(0, 160, 233);"></i>
                             <input type="radio" name="male" class="female" value="2"  @click="selectGender('2')" :checked="userInfo.male == 2">
                             <span>女</span>
                         </div>
@@ -123,7 +123,7 @@ export default {
             token: localStorage.getItem("token"),
             userInfo: this.$getItem("userInfo"),
             headImg: this.$getItem("userInfo").headImg != 0 ? this.$store.state.domain + this.$getItem("userInfo").headImg : "/static/img/avatar.png",
-            myTitle: "个人中心",
+            myTitle: "个人资料",
             backRouth: "/index",
             dateData: {
                 // date: new Date(new Date().getFullYear() - 20,1,1),

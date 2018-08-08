@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="register">
-            <p class="text_center" style="font-size: .8rem;padding: 2rem 0;color: rgb(40, 130, 228);">注册</p>
+            <p class="text_center" style="font-size: .8rem;padding: 0 0 2rem;color: rgb(40, 130, 228);">注册</p>
             <div class="clearfix">
                 <label for="username" class="input_left">用户名</label>
                 <input type="text" id="username" placeholder="请输入用户名" class="input_right" v-model="username">
@@ -50,6 +50,7 @@
                 smsCode: "",
                 password: "",
                 pwdConfirm: "",
+                promoCode: this.$route.query.promocode,
                 errShow: {
                     errPhoneShow: false,
                     errPwdShow: false
@@ -60,14 +61,14 @@
                 //配置数据
                 ajaxConfig: {
                     showLoading: false
-                }
+                },
+                refreshShow: false
             }
         },
         methods: {
             phoneInput() {
-                let val = this.phone,
-                    myreg = /^[1][0-9]{10}$/;
-                if(!myreg.test(val)) {
+                let val = this.phone;
+                if(this.$phoneValidate(val) === false) {
                     this.errShow.errPhoneShow = true;
                 }else {
                     this.errShow.errPhoneShow = false;
@@ -92,7 +93,12 @@
             },
             getVerificationcode() {
                 console.log(this.phone)
-                if(this.phone == "" || this.errShow.errPhoneShow === true) {
+                if(this.phone === "") {
+                    this.$popup("请输入手机号");
+                    return;
+                }
+                if(this.errShow.errPhoneShow === true) {
+                    this.$popup("请输入正确的手机号");
                     return;
                 }
                 //获取验证码禁用
@@ -126,7 +132,26 @@
                 })
             },
             registerConfirm() {
-                if(this.errShow.errPhoneShow || this.errShow.errPwdShow) {
+                //验证
+                if(this.username === "") {
+                    this.$popup("请输入用户名");
+                    return;
+                }else if(this.phone == "") {
+                    this.$popup("请输入手机号");
+                    return;
+                }else if(this.smsCode == "") {
+                    this.$popup("请输入验证码");
+                    return;
+                }else if(this.password == "") {
+                    this.$popup("请输入密码");
+                    return;
+                }
+                if(this.errShow.errPhoneShow === true) {
+                    this.$popup("请输入正确的手机号");
+                    return;
+                }
+                if(this.errShow.errPwdShow === true) {
+                    this.$popup("请保证两次输入的密码相同");
                     return;
                 }
                 //注册
@@ -135,7 +160,8 @@
                     phone = this.phone.trim(),
                     password = md5(this.password),
                     pwd = md5(this.pwdConfirm),
-                    sms_code = this.smsCode.trim();
+                    sms_code = this.smsCode.trim(),
+                    promoCode = this.promoCode;
                 postData = {
                     username,
                     phone,
@@ -143,6 +169,9 @@
                     pwd,
                     sms_code
                 };
+                if(promoCode !== undefined) {
+                    postData.promoCode = promoCode;
+                }
                 //此部分待补充
                 // if(searchObj.promoCode) {
                 //     postData.promoCode = seachObj.promoCode

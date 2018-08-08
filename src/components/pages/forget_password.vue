@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="forget_password">
-            <p class="text_center" style="font-size: .8rem;padding: 2rem 0;color: rgb(40, 130, 228);">忘记密码</p>
+            <p class="text_center" style="font-size: .8rem;padding: 0 0 2rem;color: rgb(40, 130, 228);">忘记密码</p>
             <div class="clearfix mgt6">
                 <label for="phone" class="input_left">手机号</label>
                 <div class="input_right">
@@ -87,7 +87,12 @@
             },
             getVerificationcode() {
                 console.log(this.phone)
-                if(this.phone == "" || this.errShow.errPhoneShow === true) {
+                if(this.phone === "") {
+                    this.$popup("请输入手机号");
+                    return;
+                }
+                if(this.errShow.errPhoneShow === true) {
+                    this.$popup("请输入正确的手机号");
                     return;
                 }
                 //获取验证码禁用
@@ -121,7 +126,23 @@
                 })
             },
             registerConfirm() {
-                if(this.errShow.errPhoneShow || this.errShow.errPwdShow) {
+                //验证
+                if(this.phone == "") {
+                    this.$popup("请输入手机号");
+                    return;
+                }else if(this.smsCode == "") {
+                    this.$popup("请输入验证码");
+                    return;
+                }else if(this.password == "") {
+                    this.$popup("请输入密码");
+                    return;
+                }
+                if(this.errShow.errPhoneShow === true) {
+                    this.$popup("请输入正确的手机号");
+                    return;
+                }
+                if(this.errShow.errPwdShow === true) {
+                    this.$popup("请保证两次输入的密码相同");
                     return;
                 }
                 //注册
@@ -134,10 +155,6 @@
                     newPwd,
                     sms_code
                 };
-                //此部分待补充
-                // if(searchObj.promoCode) {
-                //     postData.promoCode = seachObj.promoCode
-                // }
                 let _this = this,
                     api = "/v1/findPwd";
                 this.$ajax.post(api,postData)

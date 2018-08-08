@@ -1,9 +1,6 @@
 .line_chart {
     padding-bottom: 2rem;
 }
-.no_data {
-    display: none;
-}
 .chart_list li {
     float: left;
     padding: .5rem 1rem;

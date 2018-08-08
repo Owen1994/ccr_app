@@ -1,15 +1,17 @@
 .login {
     font-size: .55rem;
-    padding: 1rem 2rem;
-    width: 100%;
-    /* position: absolute;
+    padding: 1rem 1.5rem;
+    width: 90%;
+    border: 1px solid rgb(139, 136, 136);
+    position: absolute;
     top: 50%;
-    transform: translateY(-50%); */
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 .password {
     margin-top: .6rem;
 }
-.forget_password {
+.to_forget_password {
     float: right;
     padding: .5rem 0;
 }

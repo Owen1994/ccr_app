@@ -5,7 +5,7 @@
                 <p>个人中心</p>
             </div>
             <ul>
-                <li class="extention_link" data-clipboard-text="1" ref="extentionLink">
+                <li class="extention_link" :data-clipboard-text="copyLink" ref="extentionLink">
                     <i class="fa fa-external-link" style="float: left;font-size: .9rem;"></i>
                     <span>推广链接</span>
                     <i class="fa fa-chevron-right" style="float: right;"></i>
@@ -47,6 +47,7 @@ export default {
     data() {
         return {
             token: localStorage.getItem("token"),
+            copyLink: location.host + "/#/register?promocode=" + this.$getItem("userInfo").promoCode,
             //配置数据
             refreshShow: false
         }

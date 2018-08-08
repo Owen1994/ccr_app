@@ -26,7 +26,7 @@
                 </ul>
             </div>
         </div>
-        <common-component :refreshShow="refreshShow"></common-component>
+        <common-component :refreshShow="refreshShow" :nodataShow="nodataShow"></common-component>
         <common-footer></common-footer>
     </div>
 </template>
@@ -44,7 +44,8 @@
                 token: localStorage.getItem("token"),
                 orderList: [],
                 //配置数据
-                refreshShow: false
+                refreshShow: false,
+                nodataShow: false
             }
         },
         methods: {
@@ -87,6 +88,8 @@
                         //     "bourseStatus": "1"
                         //     }
                         // ];
+                    }else if(res.code === -1) {
+                        _this.nodataShow = true;
                     }else if(res.code === 100012 || res.code === 100013) {
                         _this.$router.push("/login");
                     }else {

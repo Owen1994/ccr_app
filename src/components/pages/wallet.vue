@@ -24,10 +24,9 @@
                         </div>
                     </li>
                 </ul>
-                <p class="no_data" v-show="walletList.length == 0">钱包列表为空</p>
             </div>
         </div>
-        <common-component :refreshShow="refreshShow"></common-component>
+        <common-component :refreshShow="refreshShow" :nodataShow="nodataShow"></common-component>
         <common-footer></common-footer>
     </div>
 </template>
@@ -47,7 +46,8 @@
                 activeIndex: 0,
                 walletList: [],
                 //配置数据
-                refreshShow: false
+                refreshShow: false,
+                nodataShow: false
             }
         },
         methods: {
@@ -87,6 +87,8 @@
                         _this.$nextTick(function() {
                             _this.getScrollInit();
                         })
+                    }else if(res.code === -1) {
+                        _this.nodataShow = true;
                     }else if(res.code === 100012 || res.code === 100013) {
                         _this.$router.push("/login");
                     }else {
