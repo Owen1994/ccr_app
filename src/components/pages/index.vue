@@ -4,17 +4,19 @@
             <div class="user">
                 <ul class="clearfix">
                     <li class="avatar">
-                        <i class="fa fa-user-o" style="font-size: .8rem"></i>
+                        <div style="width: 1.6rem;height: 1.6rem;position: relative;margin: auto;">
+                            <img class="headImg" :src="headImg" alt="" style="width: 100%;height: 100%;">
+                        </div>
                     </li>
                     <li>
                         <span class="userName">{{ username }}</span>
                     </li>
                     <li  @click="$router.push('/personal_info')">
-                        <i class="fa fa-chevron-right" style="color: red;"></i>
+                        <i class="fa fa-chevron-right" style="color: red;font-size: .5rem;"></i>
                     </li>
                 </ul>
                 <div class="stopTime">
-                    <i class="fa fa-clock-o"></i>
+                    <i class="fa fa-clock-o" style="font-size: .6rem;"></i>
                     <span>{{ leftTime }}</span>
                 </div>
             </div>
@@ -29,7 +31,7 @@
                         <p>盈利</p>
                     </li>
                     <li>
-                        <p>19</p>
+                        <p>{{ subordinateNum }}</p>
                         <p>下级</p>
                     </li>
                 </ul>
@@ -60,8 +62,10 @@
         data() {
             return {
                 token: localStorage.getItem("token"),
+                headImg: this.$getItem("userInfo").headImg != 0 ? this.$store.state.domain + this.$getItem("userInfo").headImg : "/static/img/avatar.png",
                 username: "",
                 accountBalance: "",
+                subordinateNum: 0,
                 leftTime: "",
                 newsList: [],
                 //配置数据
@@ -88,11 +92,36 @@
                         _this.username = res.data.username;
                         _this.accountBalance = res.data.accountBalance;
                         if(res.data.stopTime != 0) {
-                            var leftTime = (new Date(res.data.stopTime) - new Date()) / 3600 / 24;
+                            var leftTime = Math.ceil((new Date(res.data.stopTime*1000) - new Date()) / 3600 / 24);
                         }else {
                             var leftTime = 0;
                         }
-                        _this.leftTime = leftTime;
+                        _this.leftTime = leftTime + "天";
+                    }else if(res.code === 100012 || res.code === 100013) {
+                        _this.$router.push("/login");
+                    }else {
+                        _this.$popup(res.msg);
+                    }
+                })
+                .catch((err) => {
+                    console.log(err)
+                    _this.refreshShow = true;
+                })
+            },
+            getPromoteList() {
+                let api = "/v1/getPromoteList",
+                    _this = this;
+                this.$ajax.get(api,{
+                    headers: {
+                        Authorization: "Bearer " + this.token
+                    },
+                    showLoading: true
+                })
+                .then((res) => {
+                    res = res.data;
+                    console.log(res)
+                    if(res.code === 1) {
+                        _this.subordinateNum = res.data.length;
                     }else if(res.code === 100012 || res.code === 100013) {
                         _this.$router.push("/login");
                     }else {

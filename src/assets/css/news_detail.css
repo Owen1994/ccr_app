@@ -7,8 +7,12 @@
     text-align: center;
     padding: 0 2rem;
 }
+.detail_title .news_title {
+    color: #000;
+}
 .news_detail .author_info {
     padding-top: 1rem;
+    /* padding-left: .4rem; */
 }
 .news_detail .author_info,
 .news_detail .addTime_info {
@@ -19,4 +23,5 @@
 .detail_content {
     font-size: .6rem;
     padding: 1rem 1.2rem 0;
+    color: rgb(80, 80, 80);
 }

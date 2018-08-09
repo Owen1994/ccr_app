@@ -81,4 +81,5 @@ input[name="head_img"] {
     border: 1px solid rgb(200, 200, 200);
     padding: .4rem 0;
     margin-top: 2rem;
+    border-radius: .3rem;
 }

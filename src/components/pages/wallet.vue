@@ -2,7 +2,7 @@
     <div>
         <div class="line_chart" style="width: 100%;height: 100%;">
             <div class="myheader">
-                <p style="color: rgb(139, 136, 136);font-size: .6rem; ">账户余额</p>
+                <p>账户余额</p>
                 <div class="mybtn" @click="syncAccount">同步余额</div>
             </div>
             <!-- better-scrool块 -->

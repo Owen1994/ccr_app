@@ -1,6 +1,6 @@
-# CCR Project
+# currency
 
-> CCR Project
+> currency_app
 
 ## Build Setup
 

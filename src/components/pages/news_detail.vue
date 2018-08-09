@@ -4,8 +4,8 @@
         <div class="news_detail">
             <div class="detail_title">
                 <p class="news_title">{{ newsTitle }}</p>
-                <p class="author_info"><span>作者：</span><span class="author">{{ author }}</span></p>
-                <p class="addTime_info"><span>时间：</span><span class="addTime">{{ addTime }}</span></p>
+                <p class="author_info"><span class="author">{{ author }}</span></p>
+                <p class="addTime_info"><i class="fa fa-clock-o" style="font-size: .5rem;margin-right: .2rem;"></i><span class="addTime">{{ addTime }}</span></p>
             </div>
             <div class="detail_content">
                 <p>{{ detailContent }}</p>
@@ -58,7 +58,7 @@
                     if(res.code === 1) {
                         _this.newsTitle = res.data.title;
                         _this.author = res.data.author;
-                        _this.addTime = res.data.addTime;
+                        _this.addTime = _this.$formatDate(new Date(res.data.addTime * 1000));
                         _this.detailContent = res.data.content;
                     }else if(res.code === 100012 || res.code === 100013) {
                         _this.$router.push("/login");
@@ -73,7 +73,6 @@
         },
         created() {
             this.getNewsDetail();
-            console.log(this.$route)
         },
     }
 </script>

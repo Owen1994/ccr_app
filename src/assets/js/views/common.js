@@ -17,7 +17,7 @@ export default {
         }
         //手机号验证
         Vue.prototype.$phoneValidate = (phoneNum) => {
-            let reg = /^[1][3,4,5,7,8][0-9]{9}$/;
+            let reg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
             if(reg.test(phoneNum)) {
                 return true;
             }else {
