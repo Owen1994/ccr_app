@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header-one :title="myTitle" :backRouth="backRouth" :extraLabel="record" :extraRouth="toRecord"></header-one>
+        <header-one :title="myTitle" :extraLabel="record" :extraRouth="toRecord"></header-one>
         <div class="withdraw_cash">
             <div class="withdraw_card clearfix">
                 <p>到账银行卡</p>
@@ -46,7 +46,6 @@
                 outMoney: "",
                 accountBalance: this.$getItem("userInfo").accountBalance,
                 myTitle: "提现",
-                backRouth: "/personal_center",
                 record: "提现记录",
                 toRecord: "/withdraw_record",
                 extentionList: [],

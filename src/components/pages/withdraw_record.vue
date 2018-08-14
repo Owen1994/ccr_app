@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header-one :title="myTitle" :backRouth="backRouth"></header-one>
+        <header-one :title="myTitle"></header-one>
         <div class="withdraw_record">
             <ul class="withdraw_record_list">
                 <li v-for="(item,index) in outMoneyList" :key="index">
@@ -33,7 +33,6 @@
             return {
                 token: localStorage.getItem("token"),
                 myTitle: "提现记录",
-                backRouth: "/withdraw_cash",
                 outMoneyList: [],
                 //配置数据
                 refreshShow: false,

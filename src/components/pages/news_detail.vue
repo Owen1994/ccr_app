@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header-one :title="myTitle" :backRouth="backRouth"></header-one>
+        <header-one :title="myTitle"></header-one>
         <div class="news_detail">
             <div class="detail_title">
                 <p class="news_title">{{ newsTitle }}</p>
@@ -30,7 +30,6 @@
             return {
                 token: localStorage.getItem("token"),
                 myTitle: "新闻详情",
-                backRouth: "/index",
                 nid: this.$route.params.nid,
                 newsTitle: "",
                 author: "",

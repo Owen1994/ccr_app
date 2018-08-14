@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <ul class="clearfix">
-            <li @click="$router.push(backRouth)">
+            <li @click="$router.go(-1)">
                 <span class="fa fa-chevron-left" style="color: red;"></span>
             </li>
             <li>
@@ -20,7 +20,7 @@
                 
             }
         },
-        props: ["title","backRouth","extraLabel","extraRouth"]
+        props: ["title","extraLabel","extraRouth"]
     }
 </script>
 <style>

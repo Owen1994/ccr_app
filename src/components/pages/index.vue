@@ -88,7 +88,6 @@
                     if(res.code === 1) {
                         let userInfo = JSON.stringify(res.data);
                         localStorage.setItem("userInfo",userInfo);
-                        //页面填充请求回的用户信息
                         _this.username = res.data.username;
                         _this.accountBalance = res.data.accountBalance;
                         if(res.data.stopTime != 0) {

@@ -1,6 +1,6 @@
 <template>
     <div style="height: 100%;">
-        <header-one :title="myTitle" :backRouth="backRouth"></header-one>
+        <header-one :title="myTitle"></header-one>
         <form class="personal_info" ref="infoForms">
             <ul class="personal_info_content">
                 <li>
@@ -124,7 +124,6 @@ export default {
             userInfo: this.$getItem("userInfo"),
             headImg: this.$getItem("userInfo").headImg != 0 ? this.$store.state.domain + this.$getItem("userInfo").headImg : "/static/img/avatar.png",
             myTitle: "个人资料",
-            backRouth: "/index",
             dateData: {
                 // date: new Date(new Date().getFullYear() - 20,1,1),
                 lang: zh,

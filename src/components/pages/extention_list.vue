@@ -1,6 +1,6 @@
 <template>
     <div>
-        <header-one :title="myTitle" :backRouth="backRouth"></header-one>
+        <header-one :title="myTitle"></header-one>
         <div class="extention_list">
             <ul>
                 <li v-for="(item,index) in extentionList" :key = "index">
@@ -36,7 +36,6 @@
                 extentionList: [],
                 //配置数据
                 myTitle: "推广列表",
-                backRouth: "/personal_center",
                 refreshShow: false,
                 nodataShow: false
             }
